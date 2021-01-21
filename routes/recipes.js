@@ -55,6 +55,7 @@ var upload = multer({
 
 router.post("/AddRecipe",upload.fields([{name:'recipeImage',maxCount:5},{name:'video',maxCount:1}]),recipeController.insertrecipe);
 router.get('/AllRecipe',recipeController.allrecipe)
+router.get("/",recipeController.allrecipe)
 router.put("/updaterecipe/:Id",cheakauth,upload.fields([{name:'recipeImage',maxCount:5},{name:'video',maxCount:1}]), recipeController.updaterecipe);
 router.get("/FindById/:Id",cheakauth, recipeController.findonerecipe);
 router.delete("/DeleteRecipe/:Id",cheakauth,recipeController.deleterecipe);

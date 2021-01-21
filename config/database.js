@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongoDB = " mongodb://127.0.0.1:27017/Foodizz";
+const mongoDB = "mongodb+srv://Mandankadhaval:Welcome@123@cluster0.ljgre.mongodb.net/Foodizzz?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
