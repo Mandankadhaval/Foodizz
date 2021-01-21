@@ -12,6 +12,7 @@ mongoose.connection.on(
   console.error.bind(console, "MongoDB connection error:")
 );
 app.use(cors());
+app.set('view engine', 'ejs');
 app.set("secretKey", "Foodizz");
 app.use(bodyParser.json({limit:"50mb"}));
 app.use(paginate.middleware(10, 50));
