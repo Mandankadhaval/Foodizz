@@ -7,11 +7,11 @@ var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         if(file.fieldname==="recipeImage")
         {
-            cb(null,'imageupload/')
+            cb(null,'./imageupload/')
         }
         if(file.fieldname==="video")
         {
-            cb(null,'videouploads/')
+            cb(null,'./videouploads/')
         }
     },
     filename: function (req, file, cb) {
@@ -57,7 +57,7 @@ router.post("/AddRecipe",upload.fields([{name:'recipeImage',maxCount:5},{name:'v
 router.get('/AllRecipe',recipeController.allrecipe)
 router.get("/",recipeController.allrecipe)
 router.put("/updaterecipe/:Id",cheakauth,upload.fields([{name:'recipeImage',maxCount:5},{name:'video',maxCount:1}]), recipeController.updaterecipe);
-router.get("/FindById/:Id",cheakauth, recipeController.findonerecipe);
+router.get("/FindById/:Id", recipeController.findonerecipe);
 router.delete("/DeleteRecipe/:Id",cheakauth,recipeController.deleterecipe);
 router.get("/GetByUserId/:Id",cheakauth,recipeController.GetByUserId);
 module.exports = router;

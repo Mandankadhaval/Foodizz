@@ -14,7 +14,6 @@ module.exports = {
         var keyword=req.body.keyword
         var type=req.body.type
         var containrecipe=req.body.containrecipe
-       
         var samplefile=req.files.recipeImage
         var videopath=[] 
         var filepath=[]
@@ -22,12 +21,14 @@ module.exports = {
         {
           var sampleVideo=req.files.video
             sampleVideo.forEach(element => {
+              
               videopath.push(element.path)
             });
         }else{
             videopath[0]=null
         }       
         samplefile.forEach(element => {
+              
               filepath.push(element.path)
         });
        

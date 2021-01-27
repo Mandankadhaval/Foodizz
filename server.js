@@ -11,7 +11,12 @@ mongoose.connection.on(
   "error",
   console.error.bind(console, "MongoDB connection error:")
 );
-app.use(cors());
+var corsOptions = {
+  origin: "https://foodizz.vercel.app/"
+};
+app.use(cors(corsOptions));
+app.use('/imageupload/',express.static('./imageupload'));
+app.use('/videouploads/',express.static('./videouploads'));
 app.set('view engine', 'ejs');
 app.set("secretKey", "Foodizz");
 app.use(bodyParser.json({limit:"50mb"}));
