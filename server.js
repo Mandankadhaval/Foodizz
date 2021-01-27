@@ -12,7 +12,7 @@ mongoose.connection.on(
   console.error.bind(console, "MongoDB connection error:")
 );
 var corsOptions = {
-  origin: "https://foodizz.vercel.app/"
+  origin: "http://localhost:3000"
 };
 app.use(cors(corsOptions));
 app.use('/imageupload/',express.static('./imageupload'));
