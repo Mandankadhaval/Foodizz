@@ -7,6 +7,7 @@ const User=require("./routes/users")
 const jwt = require("jsonwebtoken");
 const paginate = require('express-paginate');
 const cors = require('cors');
+const port=process.env.PORT || 3000
 mongoose.connection.on(
   "error",
   console.error.bind(console, "MongoDB connection error:")
@@ -36,7 +37,7 @@ app.use(function (err, req, res, next) {
     else res.status(500).json({ message: err.message });
   });
   
-app.listen(3000, function () {
-  console.log("Node server listening on port 3000");
+app.listen(port, function () {
+  console.log("No de server listening on port 3000");
 });
 

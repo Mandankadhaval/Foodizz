@@ -51,8 +51,6 @@ var upload = multer({
     },
     fileFilter:fileFilter
  });
-
-
 router.post("/AddRecipe",upload.fields([{name:'recipeImage',maxCount:5},{name:'video',maxCount:1}]),recipeController.insertrecipe);
 router.get('/AllRecipe',recipeController.allrecipe)
 router.get("/",recipeController.allrecipe)
